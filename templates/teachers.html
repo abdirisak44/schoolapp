@@ -1,0 +1,63 @@
+{% extends "base.html"%}
+{% block content %}
+
+<main>
+    <center>
+        
+       </head>
+<body>
+
+
+    <center>
+        <h3>add new teacher</h3>
+        <form method="post" action="/add_teacher" >
+            <input type="text" name="name" placeholder="name" required><br><br>
+            <input type="text" name="faculty" placeholder="faculty" required><br><br>
+            <input type="text" name="semester" placeholder="semester" required><br><br>  
+            <button type="submit">add</button>
+        </form>
+        <h2>teacher list</h2>
+ 
+        <br><br>
+        <table border="1" cellpadding="8"cellspacing="0">
+            <thead>
+                <tr>\
+                    <th>id</th>
+                    <th>name</th>
+                    <th>faculty</th>
+                    <th>semester</th>
+                    <th>action</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                  {% for teacher in teachers%}
+                  <tr>
+                    <td>{{teacher.id}}</td>
+                     <td>{{teacher.name}}</td>
+                      <td>{{teacher.faculty}}</td>
+                      <td>{{teacher.semester}}</td>
+                       <td>
+                        <form action="{{url_for('delete_teacher',teacher_id=teacher.id)}}" method="POST" style="display: inline;">
+                            <button type="sumbit" onclick="return confirm('are sure to delete?')">delete</button>
+
+                        </form>
+                        <button><a href="{{url_for('edit_teacher',teacher_id=teacher.id)}}" ></a>edit</button>
+                       </td>
+                 </tr>      
+
+
+
+                  {% endfor%}
+            </tbody>
+            
+        
+        </table>
+
+    <p><a style="color: blue;" href="/add_staff"> Go staffs</a></p>
+    </center>
+    </main>
+    {% endblock%}
+  
+</body>
+</html>

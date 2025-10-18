@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>edit teacher</h1>
+    <form method="POST">
+        <input type="text"name="name" value="{{teacher.name}}" required> <br>
+        <input type="text"name="faculty" value="{{teacher.faculty}}" required> <br>
+        <input type="text"name="semester" value="{{teacher.semester}}" required> <br>
+        <button type="submit">update</button>
+
+
+    </form>
+    <br>
+    <a href="{{ url_for('add_teacher')}}"> bact to teachers</a>
+</body>
+</html>

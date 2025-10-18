@@ -1,0 +1,60 @@
+
+{% extends "base.html"%}
+{% block content %}
+        
+   <main>
+       
+       </head>
+
+
+    <center>
+        <h1>add new student</h1>
+        <form method="post" action="/add_student" >
+            <input type="text" name="name" placeholder="name" required><br><br>
+            <input type="text" name="faculty" placeholder="faculty" required><br><br>
+            <input type="text" name="semester" placeholder="semester" required><br><br>
+            <input type="text" name="phone" placeholder="phone" required><br><br>
+            <button type="submit">add</button>
+        </form>
+ 
+        <h2>student list</h2>
+        <table border="1" cellpadding="8"cellspacing="0">            <thead>
+                <tr>\
+                    <th>id</th>
+                    <th>name</th>
+                    <th>faculty</th>
+                    <th>semester</th>
+                    <th>phone</th>
+                    <th>action</th>
+                </tr>
+               
+            </thead>
+            <tbody>
+                  {% for student in students%}
+                  <tr>
+                    <td>{{student.id}}</td>
+                     <td>{{student.name}}</td>
+                      <td>{{student.faculty}}</td>
+                       <td>{{student.semester}}</td>
+                       <td>{{student.phone}}</td>
+                       <td>
+                        <form action="{{url_for('delete_student',student_id=student.id)}}" method="POST" style="display: inline;">
+                            <button type="sumbit" onclick="return confirm('are sure to delete?')">delete</button>
+
+                        </form>
+                        <button><a href="{{url_for('edit_student',student_id=student.id)}}" ></a>edit</button>
+                       </td>
+                  </tr>
+                  {% endfor%}
+            </tbody>
+        </table>
+        </center>
+        
+        <p><a style="color: blue;" href="/add_teacher">go teachers</a></p>
+      
+  
+ {% endblock%}
+      </main>
+
+
+
