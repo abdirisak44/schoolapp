@@ -1,8 +1,8 @@
 from flask import Flask,render_template,redirect,url_for,request
 from flask_sqlalchemy import SQLAlchemy
 from supabase import create_client, client
-url="https://zbtdbfajfvgzdmkbobsa.supabase.co"
-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpidGRiZmFqZnZnemRta2JvYnNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3MTk3ODcsImV4cCI6MjA3NjI5NTc4N30.I0sZOQ6zCu9uUkKCICML6DHzbwmXHkextmwuXzaMDMI"
+url="https://hkwcdxtvkemjbemkmhug.supabase.co"
+key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhrd2NkeHR2a2VtamJlbWttaHVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA5MzgyMjMsImV4cCI6MjA3NjUxNDIyM30.aPmX9kdGsnOOuQK6cxTg0yzygXqgMxdIohFxOe0tcyM"
 supabase:client=create_client(url,key)
 app=Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:/// school2.db'
